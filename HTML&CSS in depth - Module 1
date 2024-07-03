@@ -1,1 +1,93 @@
+Basic semantic structure:
+1. Header element; 2. Nav element; 3. Main element; 4. Footer element.
 
+Meta tags define metadata about a webpage.
+Meta tags are added inside the head element of your HTML document. And since it is in the head element,
+it is not displayed in the web browser.
+There is NO CLOSING TAG for METATAGS. It has two attributes, name and content.
+
+SEO - metatag's name can be changed to Viewports, Robot, Author, Description, Keywords(Not recommended anymore).
+
+Bare bones layout - add a CSS file to the CSS folder and add a link element to reference the CSS file. Add a JS file
+to the JS folder and add a script element to reference the JS file.
+
+Many best practices for layouts are included in the Bootstrap library.
+
+Open Graph Protocol: Changes made to the metatags to enable previews for websites. Substitute the name attribute with
+a property attribute. It starts with "og:", and you must contain these four properties on a webpage, they are: title,
+type, URL, and image.
+Other than those properties, we still have 'description' which describes the webpage, a 'locale' property that describes
+the language and territory of the webpage, a 'site_name' which describes the overall website that the webpage belongs to.
+
+How to link a page on social media. Setting up a social media card.
+<meta property="og:title" content="Our Menu">
+<meta property="og:type" content="website">
+<meta property="og:image" content="logo.png">
+<meta property="og:url" content="https://littlelemon.com">
+---optional below---
+<meta property="og:description" content="Little Lemon is a family-owned Mediterranean restaurant focusing on traditional flavor.">
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="Little Lemon">
+
+Form validation: client-side/server-side
+client-side validation is done by JS code or browser which provides an immediate response to the user.
+server-side validation provides a more secure and more complex validation method.
+client-side validation: <input type="email"> <input type="tel"> <input type="url"> <input type="date"> <input type="time"> 
+<input type="number"> <input type="color"> <input type="range" required> these will trigger client-side validation
+required attribute
+
+Create a form - <form></form>
+Label - <label for="the_id_you_want_to_select"></label>
+
+Client-side validation: since HTTP requests are expensive, it is better to validate everything on the client side and then transmit to 
+the server side. The 'REQUIRED' field is a good practice for client-side validation. Also, you can add the length of input to ensure the 
+length of the input to prevent wrong submissions. minlength="3" maxlength="12" are used along with REQUIRED to ensure better UX.
+User feedback with CSS. invalid is used to do something when the data is invalid. focus checks whether the user is entering data(we don't
+want the input area to show red before user input)
+      input:focus:invalid{
+      
+      }
+
+Radio button: Add 'fieldset' field to group radio buttons.
+<fieldset id="size">
+  <input type="radio" value="2" name="size"> 2-person table // name is set to the same id with fieldset to group things together
+  <input type="radio" value="4" name="size" checked> 4-person table // 'checked' is to inform that this is set to default value
+  <input type="radio" value="6" name="size"> 6-person table
+</fieldset>
+
+Form submission: 
+There are limitations regarding sending data through HTTP requests:
+1. URL length limited by browser; 2. URL length limited by web server; 3. Security threats
+HTTP POST method is more secure than GET method. And HTTPS is double-end encrypted and provides better security than HTTP.
+
+Browser differences: use CSS to regulate for consistent user experiences. You can use element selectors in CSS to select different element
+types and apply CSS properties to them. Or use individual element selector like input[type=text] {}
+Popular CSS libraries and frameworks like Bootstrap/Tailwind CSS/Foundation provide CSS rules for forms and ensure visual consistency.
+
+Add video and audio to your webpage: HTML video and audio tags are used for embedding media on a webpage and both support different file types
+that can be played in the web browser.
+<video> // you can also add other attributes: width="320" height="240" controls
+  <source src="dance.mp4" type="video/mp4">
+  <source src="dance.ogg" type="video/ogg">
+</video>
+
+<audio> // controls
+  <source src="music.ogg" type="audio/ogg">
+  <source src="music.mp3" type="audio/mpeg">
+</audio>
+
+Embedded media - datalist
+
+iFrame - An HTML element that allows you to place or embed content from another website into a webpage. It's defined using the <iframe></iframe>
+It embeds another browsing instance inside a page.
+<iframe src="https://instagram.com/Yuko_Ogura/profile"></iframe>
+iFrame is vulnerable to malicious code and injection. Therefore, we are using 'allow' attribute to limit its behavior.
+<iframe src="https://instagram.com/Yuko_Ogura/profile" allow="camera 'none'; microphone 'none';"></iframe>
+Also, sandbox attribute to prevent download or popup windows within iFrame. If its sandbox attribute is set to null, all sandbox restrictions will
+apply to the iFrame. 
+
+The Canvas element - Allows users to play a video game or watched an animation in the browser. Four technologies underpinning this behavior. 
+GIF, webP, 2D Canvas, WebGL - the first two are used for animated images. 2D Canvas allows 2D graphics to be drawn in the browser, and it's popular for
+building 2D video games and animations. The logic and behavior of an animation or video game is defined using JavaScript. WebGL is a popular technology
+for building 2D and 3D animations and advanced graphics. The benefit of WebGL is that a dedicated chip in your device called GPU, which does the
+calculations when graphics are rendered to the screen.
