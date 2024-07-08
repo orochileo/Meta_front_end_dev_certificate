@@ -1,0 +1,30 @@
+The browser window that is visible to the user on the screen is called the Viewport.
+One important property is Display. This property specifies the type of box that you want to use for a given HTML element.
+#sample {
+  display: block;
+}
+Flexbox(short for Flexible box model) was introduced before the grid layout. It adds float elements and positioning. 
+#sample {
+  display: flex;
+}
+CSS Grid is similar to the Flexbox, except it creates a two dimensional grid along both the row and column axes. 
+#sample {
+  display: grid;
+}
+Flexbox can overcome the limitations caused by containers such as block and inline because it does a better job of 
+scaling over larger web pages and also provides more dynamic control of the containers.This is because it can grow, 
+shrink and align the items inside it which give better control to the programmer over the contents and styling of the 
+items inside the container. 
+Flexbox is single-dimensional, which means you can align it either along a row or a column and it is set to row 
+alignment by default.There are two axes, the main and cross-axis, much like the x and y-axis used in coordinate geometry. 
+When aligned along the row, the horizontal axis is called the main axis and the vertical axis is called the cross axis.
+
+Three commonly used Flexbox elements:
+1. Search Bar. You can use Flexbox for search bars because it ties up all the elements, such as the small seach icon, 
+the search input area, and the submit button. 
+2. Navigation Bar. Flexbox makes your navigation bar highly responsive on different devices. 
+3. Image Gallery. Flexbox realigns itself when you change the size of the window. 
+
+* is the uniersal selector in CSS. It applies the rules to every element in CSS code. 
+
+Flex charts - 
