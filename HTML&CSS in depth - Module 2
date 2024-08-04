@@ -20,11 +20,84 @@ alignment by default.There are two axes, the main and cross-axis, much like the 
 When aligned along the row, the horizontal axis is called the main axis and the vertical axis is called the cross axis.
 
 Three commonly used Flexbox elements:
-1. Search Bar. You can use Flexbox for search bars because it ties up all the elements, such as the small seach icon, 
+1. Search Bar. You can use Flexbox for search bars because it ties up all the elements, such as the small search icon, 
 the search input area, and the submit button. 
 2. Navigation Bar. Flexbox makes your navigation bar highly responsive on different devices. 
 3. Image Gallery. Flexbox realigns itself when you change the size of the window. 
 
 * is the uniersal selector in CSS. It applies the rules to every element in CSS code. 
 
-Flex charts - 
+Combination selectors
+1. Descendant selectors(using space);
+2. Child selectors(>);
+3. General sibling selectors(~);
+4. Adjacent sibling selectors(+);
+
+*** Descendant selectors:
+HTML file: ->
+<div id="blog"> 
+  <h1>Latest News</h1>
+  <div>
+    <h1>Weather Forecast</h1>
+    <p>Some articles regarding the weather</p>
+    <p>Some other parts regarding other information</p>
+  </div>
+</div>
+CSS file: ->
+#blog h1: {
+  color: blue;
+}
+In this case, all h1 tags under the blog div block will be blue.***
+
+
+*** Child selectors(Only the immediate child of this selector will be selected):
+HTML file: ->
+<div id="blog"> 
+  <h1>Latest News</h1>
+  <div>
+    <h1>Weather Forecast</h1>
+    <p>Some articles regarding the weather</p>
+    <p>Some other parts regarding other information</p>
+  </div>
+</div>
+CSS file: ->
+#blog>h1: {
+  color: blue;
+}
+In this case, only the "Latest News" part will be blue.***
+
+// "~": this is called a tilde
+*** General sibling selectors(All elements that are siblings of the selected h1 element):
+HTML file: ->
+<div id="blog"> 
+  <h1>Latest News</h1>
+  <div>
+    <h1>Weather Forecast</h1>
+    <p>Some articles regarding the weather</p>
+    <p>Some other parts regarding other information</p>
+  </div>
+</div>
+CSS file: ->
+#blog~h1: {
+  color: blue;
+}
+In this case, all the paragraphs under the Weather Forecast tag turn blue.***
+
+*** Adjacent sibling selectors(Use adjacent sibling selectors to target only the first, or adjacent element
+that follows another element):
+HTML file: ->
+<div id="blog"> 
+  <h1>Latest News</h1>
+  <div>
+    <h1>Weather Forecast</h1>
+    <p>Some articles regarding the weather</p>
+    <p>Some other parts regarding other information</p>
+  </div>
+</div>
+CSS file: ->
+#blog+h1: {
+  color: blue;
+}
+In this case, The adjacent sibling of the first h1 tag will be blue, which is the paragraph "Some articles regarding
+the weather".***
+
